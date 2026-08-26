@@ -1,0 +1,31 @@
+providers:
+  - id: comfyui
+    kind: local
+    adapter: integrations.comfyui.bridge:ComfyUIAdapter
+    capabilities: [text-to-image, image-to-image, video-generation, controlnet, ip-adapter, face-consistency]
+    env: [COMFYUI_BASE_URL]
+  - id: ffmpeg
+    kind: local
+    adapter: integrations.media.ffmpeg:FFmpegAdapter
+    capabilities: [media-processing, audio-cleanup, muxing, transcoding]
+    env: [FFMPEG_BIN]
+  - id: blender
+    kind: local
+    adapter: integrations.blender.adapter:BlenderAdapter
+    capabilities: [3d, vfx, rendering]
+    env: [BLENDER_BIN]
+  - id: obs
+    kind: local
+    adapter: integrations.obs.adapter:OBSAdapter
+    capabilities: [live-production, recording]
+    env: [OBS_WEBSOCKET_URL]
+  - id: gemini
+    kind: cloud
+    adapter: integrations.cloud.generic:GenericCloudAdapter
+    capabilities: [text-generation, image-understanding, multimodal]
+    env: [GEMINI_API_KEY]
+  - id: github
+    kind: cloud
+    adapter: integrations.cloud.generic:GenericCloudAdapter
+    capabilities: [source-control, publishing]
+    env: [GITHUB_TOKEN]

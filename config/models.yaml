@@ -1,0 +1,25 @@
+models:
+  - id: flux
+    provider: comfyui
+    capability: text-to-image
+    aliases: [FLUX, FLUX.1]
+  - id: sdxl
+    provider: comfyui
+    capability: text-to-image
+    aliases: [SDXL]
+  - id: wan
+    provider: comfyui
+    capability: video-generation
+    aliases: [Wan]
+  - id: whisper
+    provider: comfyui
+    capability: transcription
+    aliases: [Whisper, WhisperX]
+  - id: xtts-v2
+    provider: comfyui
+    capability: text-to-speech
+    aliases: [XTTS-v2, F5-TTS, OpenVoice]
+  - id: liveportrait
+    provider: comfyui
+    capability: talking-avatar
+    aliases: [LivePortrait, MuseTalk]
