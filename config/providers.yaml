@@ -24,8 +24,53 @@ providers:
     adapter: integrations.cloud.generic:GenericCloudAdapter
     capabilities: [text-generation, image-understanding, multimodal]
     env: [GEMINI_API_KEY]
-  - id: github
+  - id: nano-banana
+    kind: cloud
+    adapter: integrations.cloud.google:GoogleAdapter
+    capabilities: [image-generation, image-editing, multimodal]
+    env: [GEMINI_API_KEY]
+  - id: canva
+    kind: cloud
+    adapter: integrations.cloud.canva:CanvaAdapter
+    capabilities: [design-assets, design-export]
+    env: [CANVA_API_TOKEN]
+  - id: pixverse
     kind: cloud
     adapter: integrations.cloud.generic:GenericCloudAdapter
-    capabilities: [source-control, publishing]
-    env: [GITHUB_TOKEN]
+    capabilities: [text-to-video, image-to-video, image-generation]
+    env: [PIXVERSE_API_KEY]
+  - id: heygen
+    kind: cloud
+    adapter: integrations.cloud.generic:GenericCloudAdapter
+    capabilities: [avatar-video, video-translation, talking-avatar]
+    env: [HEYGEN_API_KEY]
+  - id: seedance
+    kind: cloud
+    adapter: integrations.cloud.generic:GenericCloudAdapter
+    capabilities: [text-to-video, image-to-video]
+    env: [SEEDANCE_API_KEY]
+  - id: seedream
+    kind: cloud
+    adapter: integrations.cloud.generic:GenericCloudAdapter
+    capabilities: [image-generation, image-editing]
+    env: [SEEDREAM_API_KEY]
+  - id: happy-horse
+    kind: cloud
+    adapter: integrations.cloud.generic:GenericCloudAdapter
+    capabilities: [text-to-video, image-to-video]
+    env: [HAPPY_HORSE_API_KEY]
+  - id: google-flow
+    kind: ui-or-experimental
+    adapter: integrations.cloud.generic:GenericCloudAdapter
+    capabilities: [cinematic-video, image-generation]
+    env: [GOOGLE_FLOW_SESSION]
+  - id: midjourney
+    kind: ui-or-unofficial
+    adapter: integrations.cloud.generic:GenericCloudAdapter
+    capabilities: [image-generation, image-editing]
+    env: [MIDJOURNEY_API_KEY]
+  - id: ponytail
+    kind: unknown
+    adapter: integrations.cloud.generic:GenericCloudAdapter
+    capabilities: [image-generation]
+    env: [PONYTAIL_API_KEY]
