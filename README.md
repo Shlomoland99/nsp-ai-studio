@@ -1,15 +1,10 @@
 # NSP AI Studio
 
-NSP AI Studio is a modular AI creator operating system. It accepts intent, resolves capabilities, selects an approved provider, and executes media pipelines through stable provider-neutral interfaces.
+NSP AI Studio is a deployable API and orchestration service for routing creative requests to local and cloud providers.
 
-## Principles
+## Scope
 
-- ComfyUI is the primary local generative-media engine.
-- FFmpeg is the canonical media-processing layer.
-- DaVinci Resolve/Fusion, Blender, and OBS are professional endpoints.
-- Providers are adapters; orchestration never depends on provider payload shapes.
-- Credentials are loaded from environment variables and are never committed.
-- Voice and face cloning require explicit authorization metadata.
+This repository focuses on the web/API service, provider adapters, ComfyUI connectivity, configuration, and deployment. Payments, mobile applications, and media-publishing pipelines are intentionally out of scope.
 
 ## Quick start
 
@@ -17,14 +12,18 @@ NSP AI Studio is a modular AI creator operating system. It accepts intent, resol
     source .venv/bin/activate
     pip install -e '.[dev]'
     cp .env.example .env
-    pytest
+    uvicorn backend.app.main:app --reload --port 8000
 
-Run a routing example:
+Health check:
 
-    python -m orchestrator.cli --capability text-to-image --local-only
+    curl http://localhost:8000/health
 
-See docs/setup.md and docs/architecture.md.
+Submit an API job:
 
-## Required integrations
+    curl -X POST http://localhost:8000/v1/jobs -H 'Content-Type: application/json' -d '{"intent":"poster","capabilities":["text-to-image"],"local_only":true}'
 
-ComfyUI, Wan, FLUX, SDXL, InstantID, IP-Adapter, ControlNet, PuLID, XTTS-v2, F5-TTS, OpenVoice, MuseTalk, LivePortrait, Whisper, WhisperX, FFmpeg, DaVinci Resolve, Fusion, Blender, OBS, CapCut, Gemini, Kling, Higgsfield, Manus, Perplexity, Canva, Notion, Google Drive, Google Sheets, and GitHub are represented in the provider catalog. Install or configure each external system separately.
+Run tests with pytest. Use Docker Compose for local deployment.
+
+## Integrations
+
+ComfyUI, FFmpeg, Blender, OBS, Gemini, Canva, Notion, Google Drive, Google Sheets, and GitHub are represented through isolated adapters. Configure credentials only through environment variables or your deployment secret manager.
