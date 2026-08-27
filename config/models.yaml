@@ -6,11 +6,15 @@ models:
   - id: sdxl
     provider: comfyui
     capability: text-to-image
-    aliases: [SDXL]
+    aliases: [SDXL, CVXL]
   - id: wan
     provider: comfyui
     capability: video-generation
-    aliases: [Wan]
+    aliases: [Wan, WAN]
+  - id: seedance-2.5
+    provider: seedance
+    capability: text-to-video
+    aliases: [Seedance 2.5, CDans 2.5, C-Dance 2.5]
   - id: whisper
     provider: comfyui
     capability: transcription
@@ -23,3 +27,35 @@ models:
     provider: comfyui
     capability: talking-avatar
     aliases: [LivePortrait, MuseTalk]
+  - id: nano-banana
+    provider: nano-banana
+    capability: image-generation
+    aliases: [Nano Banana, Nano Banana Pro]
+  - id: seedream
+    provider: seedream
+    capability: image-generation
+    aliases: [Seedream, Seedream 4.0]
+  - id: happy-horse
+    provider: happy-horse
+    capability: text-to-video
+    aliases: [Happy Horse, HappyHorse]
+  - id: ponytail
+    provider: ponytail
+    capability: image-generation
+    aliases: [Ponytail]
+  - id: google-flow
+    provider: google-flow
+    capability: cinematic-video
+    aliases: [Google Flow, Flow]
+  - id: pixverse
+    provider: pixverse
+    capability: text-to-video
+    aliases: [PixVerse]
+  - id: heygen
+    provider: heygen
+    capability: avatar-video
+    aliases: [HeyGen]
+  - id: midjourney
+    provider: midjourney
+    capability: image-generation
+    aliases: [Midjourney]
