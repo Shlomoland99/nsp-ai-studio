@@ -1,0 +1,1 @@
+{"README":{"class_type":"Note","inputs":{"text":"Install Wan nodes/checkpoint compatible with this workflow, then replace model node IDs. Do not store model weights or secrets in Git."}}}
