@@ -1,2 +1,12 @@
+import type { Metadata } from "next";
 import React from "react";
-export default function Layout({children}:{children:React.ReactNode}){return <html><body style={{margin:0,fontFamily:"Inter,Arial",background:"#0b1020",color:"#f8fafc"}}>{children}</body></html>}
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "NSP AI Studio",
+  description: "One API surface for creative intelligence.",
+};
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return <html lang="en"><body>{children}</body></html>;
+}
