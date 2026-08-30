@@ -1,0 +1,39 @@
+products:
+  google:
+    - id: gemini-pro
+      class: api
+      status: api-ready
+      credential: GEMINI_API_KEY
+    - id: nano-banana
+      class: api
+      status: api-ready
+      credential: GEMINI_API_KEY
+    - id: veo
+      class: api
+      status: account-and-model-dependent
+      credential: GEMINI_API_KEY
+    - id: gemini-tts
+      class: api
+      status: api-ready
+      credential: GEMINI_API_KEY
+    - id: gemini-live
+      class: api
+      status: api-ready
+      credential: GEMINI_API_KEY
+    - id: flow
+      class: labs
+      status: launch-only-until-official-api
+    - id: mixboard
+      class: labs
+      status: launch-only-until-official-api
+    - id: opal
+      class: labs
+      status: launch-only-until-official-api
+    - id: stitch
+      class: labs
+      status: launch-only-until-official-api
+  third_party:
+    - id: tidio
+      class: customer-support
+      status: separate-account-required
+      credential: TIDIO_API_KEY
