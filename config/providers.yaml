@@ -69,6 +69,26 @@ providers:
     adapter: integrations.cloud.google_labs:GoogleLabsAdapter
     capabilities: [ui-design, frontend-prototyping]
     env: [GOOGLE_STITCH_URL]
+  - id: microsoft-foundry
+    kind: cloud
+    adapter: integrations.cloud.microsoft_ai:MicrosoftAIAdapter
+    capabilities: [text-generation, reasoning, multimodal, model-routing]
+    env: [AZURE_AI_ENDPOINT, AZURE_AI_API_KEY]
+  - id: microsoft-phi
+    kind: cloud-or-local
+    adapter: integrations.cloud.microsoft_ai:MicrosoftAIAdapter
+    capabilities: [text-generation, coding, vision, multimodal]
+    env: [AZURE_AI_ENDPOINT, AZURE_AI_API_KEY]
+  - id: azure-speech
+    kind: cloud
+    adapter: integrations.cloud.microsoft_ai:MicrosoftAIAdapter
+    capabilities: [text-to-speech, speech-to-text, translation, voice]
+    env: [AZURE_SPEECH_ENDPOINT, AZURE_SPEECH_KEY]
+  - id: mai-voice
+    kind: cloud
+    adapter: integrations.cloud.microsoft_ai:MicrosoftAIAdapter
+    capabilities: [text-to-speech, voice]
+    env: [AZURE_SPEECH_ENDPOINT, AZURE_SPEECH_KEY]
   - id: canva
     kind: cloud
     adapter: integrations.cloud.canva:CanvaAdapter
@@ -99,6 +119,21 @@ providers:
     adapter: integrations.cloud.generic:GenericCloudAdapter
     capabilities: [text-to-video, image-to-video]
     env: [HAPPY_HORSE_API_KEY]
+  - id: higgsfield
+    kind: cloud
+    adapter: integrations.cloud.generic:GenericCloudAdapter
+    capabilities: [text-to-video, image-to-video, cinematic-video]
+    env: [HIGGSFIELD_API_KEY]
+  - id: kling
+    kind: cloud
+    adapter: integrations.cloud.generic:GenericCloudAdapter
+    capabilities: [text-to-video, image-to-video, audio-video]
+    env: [KLING_API_KEY]
+  - id: hailuo
+    kind: cloud
+    adapter: integrations.cloud.generic:GenericCloudAdapter
+    capabilities: [text-to-video, image-to-video]
+    env: [HAILUO_API_KEY]
   - id: tidio
     kind: third-party
     adapter: integrations.cloud.generic:GenericCloudAdapter
@@ -114,3 +149,8 @@ providers:
     adapter: integrations.cloud.generic:GenericCloudAdapter
     capabilities: [image-generation]
     env: [PONYTAIL_API_KEY]
+  - id: voicebox
+    kind: research-model
+    adapter: integrations.cloud.generic:GenericCloudAdapter
+    capabilities: [speech-generation, speech-editing]
+    env: [VOICEBOX_ENDPOINT, VOICEBOX_API_KEY]
