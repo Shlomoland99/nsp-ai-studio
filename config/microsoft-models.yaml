@@ -1,0 +1,26 @@
+providers:
+  microsoft:
+    - id: microsoft-foundry
+      family: Foundry Models
+      capabilities: [text, reasoning, vision, multimodal, routing]
+      status: api-ready
+      credentials: [AZURE_AI_ENDPOINT, AZURE_AI_API_KEY]
+    - id: microsoft-phi
+      family: Phi
+      capabilities: [text, coding, vision, multimodal]
+      status: api-ready-or-local
+      credentials: [AZURE_AI_ENDPOINT, AZURE_AI_API_KEY]
+    - id: azure-speech
+      family: Azure AI Speech
+      capabilities: [text-to-speech, speech-to-text, translation]
+      status: api-ready
+      credentials: [AZURE_SPEECH_ENDPOINT, AZURE_SPEECH_KEY]
+    - id: mai-voice
+      family: MAI Voice
+      capabilities: [text-to-speech, voice]
+      status: account-and-region-dependent
+      credentials: [AZURE_SPEECH_ENDPOINT, AZURE_SPEECH_KEY]
+  research:
+    - id: voicebox
+      owner: Meta AI
+      status: research-model-not-microsoft-api
