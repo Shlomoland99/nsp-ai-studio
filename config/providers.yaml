@@ -154,3 +154,13 @@ providers:
     adapter: integrations.cloud.generic:GenericCloudAdapter
     capabilities: [speech-generation, speech-editing]
     env: [VOICEBOX_ENDPOINT, VOICEBOX_API_KEY]
+  - id: cdance-2-5
+    kind: cloud
+    adapter: integrations.cloud.generic:GenericCloudAdapter
+    capabilities: [text-to-video, image-to-video]
+    env: [SEEDANCE_API_KEY]
+  - id: supercool
+    kind: unknown
+    adapter: integrations.cloud.generic:GenericCloudAdapter
+    capabilities: [creative-generation]
+    env: [SUPERCOOL_API_KEY]
