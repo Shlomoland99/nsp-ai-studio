@@ -1,6 +1,116 @@
 providers:
+  - id: comfyui
+    kind: local
+    adapter: integrations.comfyui.bridge:ComfyUIAdapter
+    capabilities: [text-to-image, image-to-image, video-generation, controlnet, ip-adapter, face-consistency]
+    env: [COMFYUI_BASE_URL]
+  - id: ffmpeg
+    kind: local
+    adapter: integrations.media.ffmpeg:FFmpegAdapter
+    capabilities: [media-processing, audio-cleanup, muxing, transcoding]
+    env: [FFMPEG_BIN]
+  - id: blender
+    kind: local
+    adapter: integrations.blender.adapter:BlenderAdapter
+    capabilities: [3d, vfx, rendering]
+    env: [BLENDER_BIN]
+  - id: obs
+    kind: local
+    adapter: integrations.obs.adapter:OBSAdapter
+    capabilities: [live-production, recording]
+    env: [OBS_WEBSOCKET_URL]
+  - id: gemini
+    kind: cloud
+    adapter: integrations.cloud.generic:GenericCloudAdapter
+    capabilities: [text-generation, image-understanding, multimodal]
+    env: [GEMINI_API_KEY]
   - id: gemini-pro
     kind: cloud
     adapter: integrations.cloud.google_ai:GoogleAIAdapter
     capabilities: [text-generation, reasoning, multimodal]
     env: [GEMINI_API_KEY]
+  - id: nano-banana
+    kind: cloud
+    adapter: integrations.cloud.google_ai:GoogleAIAdapter
+    capabilities: [image-generation, image-editing, multimodal]
+    env: [GEMINI_API_KEY]
+  - id: veo
+    kind: cloud
+    adapter: integrations.cloud.google_ai:GoogleAIAdapter
+    capabilities: [text-to-video, image-to-video]
+    env: [GEMINI_API_KEY]
+  - id: gemini-tts
+    kind: cloud
+    adapter: integrations.cloud.google_ai:GoogleAIAdapter
+    capabilities: [text-to-speech, voice]
+    env: [GEMINI_API_KEY]
+  - id: gemini-live
+    kind: cloud
+    adapter: integrations.cloud.google_ai:GoogleAIAdapter
+    capabilities: [realtime-voice, multimodal]
+    env: [GEMINI_API_KEY]
+  - id: flow
+    kind: google-labs
+    adapter: integrations.cloud.google_labs:GoogleLabsAdapter
+    capabilities: [storyboarding, cinematic-video]
+    env: [GOOGLE_FLOW_URL]
+  - id: mixboard
+    kind: google-labs
+    adapter: integrations.cloud.google_labs:GoogleLabsAdapter
+    capabilities: [concepting, moodboards]
+    env: [GOOGLE_MIXBOARD_URL]
+  - id: opal
+    kind: google-labs
+    adapter: integrations.cloud.google_labs:GoogleLabsAdapter
+    capabilities: [mini-apps, prompt-chaining]
+    env: [GOOGLE_OPAL_URL]
+  - id: stitch
+    kind: google-labs
+    adapter: integrations.cloud.google_labs:GoogleLabsAdapter
+    capabilities: [ui-design, frontend-prototyping]
+    env: [GOOGLE_STITCH_URL]
+  - id: canva
+    kind: cloud
+    adapter: integrations.cloud.canva:CanvaAdapter
+    capabilities: [design-assets, design-export]
+    env: [CANVA_API_TOKEN]
+  - id: pixverse
+    kind: cloud
+    adapter: integrations.cloud.generic:GenericCloudAdapter
+    capabilities: [text-to-video, image-to-video, image-generation]
+    env: [PIXVERSE_API_KEY]
+  - id: heygen
+    kind: cloud
+    adapter: integrations.cloud.generic:GenericCloudAdapter
+    capabilities: [avatar-video, video-translation, talking-avatar]
+    env: [HEYGEN_API_KEY]
+  - id: seedance
+    kind: cloud
+    adapter: integrations.cloud.generic:GenericCloudAdapter
+    capabilities: [text-to-video, image-to-video]
+    env: [SEEDANCE_API_KEY]
+  - id: seedream
+    kind: cloud
+    adapter: integrations.cloud.generic:GenericCloudAdapter
+    capabilities: [image-generation, image-editing]
+    env: [SEEDREAM_API_KEY]
+  - id: happy-horse
+    kind: cloud
+    adapter: integrations.cloud.generic:GenericCloudAdapter
+    capabilities: [text-to-video, image-to-video]
+    env: [HAPPY_HORSE_API_KEY]
+  - id: tidio
+    kind: third-party
+    adapter: integrations.cloud.generic:GenericCloudAdapter
+    capabilities: [customer-support, chat]
+    env: [TIDIO_API_KEY]
+  - id: midjourney
+    kind: ui-or-unofficial
+    adapter: integrations.cloud.generic:GenericCloudAdapter
+    capabilities: [image-generation, image-editing]
+    env: [MIDJOURNEY_API_KEY]
+  - id: ponytail
+    kind: unknown
+    adapter: integrations.cloud.generic:GenericCloudAdapter
+    capabilities: [image-generation]
+    env: [PONYTAIL_API_KEY]
